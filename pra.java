@@ -12,51 +12,6 @@ import java.util.Stack;
 
 public class pra {
 	
-	 public static void solve1(char[][] board) {
-	        // Start typing your Java solution below
-	        // DO NOT write main() function
-	        if( board == null ) return;
-	        if( board.length <= 1 || board[0].length <= 1 ) return; 
-	        boolean[][] table = new boolean[board.length][board[0].length];
-	        for(int i = 0; i < board[0].length; i ++){
-	            if( board[0][i] == 'O' && table[0][i] == false)
-	                so(board, 0, i , table);
-	        }
-	        for(int i = 0; i < board.length; i ++){
-	            if( board[i][0] == 'O' && table[i][0] == false)
-	                so(board, i, 0 , table);
-	        }
-	        for(int i = 0; i < board[0 ].length; i ++){
-	            if( board[board.length - 1 ][i] == 'O' && table[board.length - 1][i] == false)
-	                so(board, board.length - 1, i , table);
-	        }
-	        for(int i = 0; i < board.length; i ++){
-	            if( board[i][board[0].length - 1] == 'O' && table[i][board[0].length - 1] == false)
-	                so(board, i, board[0].length - 1 , table);
-	        }
-	        for( int i = 0; i < board.length; i++){
-	            for (int j = 0 ; j < board[0].length - 1; j ++){
-	                if(board[i][j] == 'O' && table[i][j] == false){
-	                    board[i][j] = 'X';
-	                
-	            }
-	        }
-	        
-	        
-	    }
-	    }
-	    
-	    public static void so(char[][] board, int x, int y, boolean[][] table){
-	        if( x < 0 || x >= board.length || y < 0 || y >= board[0].length) return;
-	        if( board[x][y] == 'X' )  return;
-	        if( table[x][y] == true ) return;
-	        table[x][y] = true;
-	        so(board, x + 1, y, table);
-	        so(board, x , y + 1 , table);
-	        so(board, x - 1, y, table);
-	        so(board, x , y - 1, table);
-	    }
-	
 	public static void bubbleSort(int[] array){
 		int len = array.length;
 		for(int i = 0; i < len; i ++){
@@ -2004,7 +1959,62 @@ public static LinkedList recursiveReverse(ListNode n, LinkedList l){
 	        }
 	        return prefix.toString();
 	    }
-	 
+	
+	
+	
+	public static void solve1(char[][] board) {
+	        // Start typing your Java solution below
+	        // DO NOT write main() function
+	        if( board == null ) return;
+	        if( board.length <= 1 || board[0].length <= 1 ) return; 
+	        boolean[][] table = new boolean[board.length][board[0].length];
+	        for(int i = 0; i < board[0].length; i ++){
+	            if( board[0][i] == 'O' && table[0][i] == false)
+	                so(board, 0, i , table);
+	        }
+	        for(int i = 0; i < board.length; i ++){
+	            if( board[i][0] == 'O' && table[i][0] == false)
+	                so(board, i, 0 , table);
+	        }
+	        for(int i = 0; i < board[0 ].length; i ++){
+	            if( board[board.length - 1 ][i] == 'O' && table[board.length - 1][i] == false)
+	                so(board, board.length - 1, i , table);
+	        }
+	        for(int i = 0; i < board.length; i ++){
+	            if( board[i][board[0].length - 1] == 'O' && table[i][board[0].length - 1] == false)
+	                so(board, i, board[0].length - 1 , table);
+	        }
+	        for( int i = 0; i < board.length; i++){
+	            for (int j = 0 ; j < board[0].length - 1; j ++){
+	                if(board[i][j] == 'O' && table[i][j] == false){
+	                    board[i][j] = 'X';
+	                
+	            }
+	        }
+	        
+	        
+	    }
+	    }
+	    
+	    public static void so(char[][] board, int x, int y, boolean[][] table){
+	        if( x < 0 || x >= board.length || y < 0 || y >= board[0].length) return;
+	        if( board[x][y] == 'X' )  return;
+	        if( table[x][y] == true ) return;
+	        table[x][y] = true;
+	        so(board, x + 1, y, table);
+	        so(board, x , y + 1 , table);
+	        so(board, x - 1, y, table);
+	        so(board, x , y - 1, table);
+	    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) throws IOException{
 		//System.out.println(excelSheet(4238923));
 		//int[] a = {5};
