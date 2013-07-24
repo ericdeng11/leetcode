@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class pra {
+
+        public static void helloWorld(){
+		System.out.println("Hello World!");
+	}
 	
 	public static void bubbleSort(int[] array){
 		int len = array.length;
