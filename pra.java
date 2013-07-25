@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class pra {
-
+        //This is a file of functions 
+	//which atcually mainly implemment a lot of 
+	//algorithm and data structure problems
         public static void helloWorld(){
 		System.out.println("Hello World!");
 	}
