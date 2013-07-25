@@ -57,13 +57,13 @@ public class pra {
             
         }
     }
-	static boolean isPalin(String s, int pos, int len){
-        	if( pos >= s.length() || len >= s.length() ) return false;
-       		 while( pos < len ){
-      	      if( s.charAt(pos) != s.charAt(len)) return false;
+	static boolean isPalin(String s, int left, int right){
+        	if( left >= s.length() || right >= s.length() ) return false;
+       		 while( left < right ){
+      	      if( s.charAt(left) != s.charAt(right)) return false;
       	      else {
-    	            pos++;
-    	            len--;
+    	            left++;
+    	            right--;
     	        }
         }
         return true;
