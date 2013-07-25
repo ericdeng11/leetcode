@@ -22,6 +22,54 @@ public class pra {
 		System.out.println("Hello World!");
 	}
 	
+	//The solution for partition palindrome list
+	//Using Dynamic programming and backtracing technic
+	public ArrayList<ArrayList<String>> partition(String s) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+     	 	  ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+      		  ArrayList<String> cur = new ArrayList<String>();
+        	int[][] rec = new int[s.length()][s.length()];
+        	for( int i = 0 ; i < s.length(); i++ ) rec[i][i] = 1;
+        	part(res, cur, 0,rec,s);
+        	return res;
+    }
+    
+	public static void part(ArrayList<ArrayList<String>> res, ArrayList<String> cur, int pos, int[][] rec, String s){
+       		 if( pos == s.length() ) {
+	           ArrayList<String> finalString = new ArrayList<String>();
+        	   for( String sub : cur ) finalString.add(sub);
+            		res.add(finalString);
+            		return;
+        }
+      	  int max = s.length() - 1 - pos;
+      	  for( int i = 0; i <= max; i++){
+            if( rec[pos][pos+i] == 0 ){
+                if( isPalin(s, pos, pos + i)) rec[pos][pos+i] = 1;
+                else rec[pos][pos+i] = -1;
+            }
+            if( rec[pos][pos+i] == -1 ) continue;
+            if( rec[pos][pos+i] == 1) {
+                cur.add(s.substring(pos, pos + i + 1));
+                part(res, cur, pos + i + 1, rec, s  );
+                cur.remove(cur.size() - 1);
+            }
+            
+        }
+    }
+	static boolean isPalin(String s, int pos, int len){
+        	if( pos >= s.length() || len >= s.length() ) return false;
+       		 while( pos < len ){
+      	      if( s.charAt(pos) != s.charAt(len)) return false;
+      	      else {
+    	            pos++;
+    	            len--;
+    	        }
+        }
+        return true;
+    }
+	
+
 	public static void bubbleSort(int[] array){
 		int len = array.length;
 		for(int i = 0; i < len; i ++){
