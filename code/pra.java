@@ -2018,57 +2018,7 @@ public static LinkedList recursiveReverse(ListNode n, LinkedList l){
 	    }
 	
 	
-//Using backtracing alg to solve N Queen problem
-	 public static ArrayList<String[]> solveNQueens(int n) {
-	        ArrayList<String[]> res = new ArrayList<String[]>();
-	        if( n < 1 || ( n > 1  && n < 4 ) ) return null;
-	        char[][] board = new char[n][n];
-	        for( int i = 0 ; i < n; i++){//Initialize the board
-	            for( int j = 0 ; j < n; j++){
-	                board[i][j] = '.';
-	            }
-	         }
-	        queen(res, board, 0, n );
-	        return res;
-	    }
-	    
-	    public static void queen(ArrayList<String[]> res, char[][] board, int level, int n ){
-	        if( level == n  ){//When we have an answer
-	            String[] str = new String[n];
-	            for(int t = 0 ; t < n; t++){
-	                StringBuffer sb = new StringBuffer();
-	                for(int i = 0 ; i < n ; i ++){
-	                	sb.append(board[t][i]);
-	                }
-	                str[t] = sb.toString();
-	            }
-	            res.add(str);
-	        }
-	      //DFS
-	        for( int i = 0; i < n; i ++){
-	            int flag = -1;
-	            for( int l = 1 ; l <= level ; l++ ){
-	                if( board[level - l][i] == 'Q'  )
-	                   {
-	                       flag = 1;
-	                       break;
-	                   }
-	                if( level - l >= 0 && i - l >=0 && board[level - l][ i - l] == 'Q' ){
-	                	flag = 1;
-	                       break;
-	                  }
-	                if(level - l >= 0 &&  i + l < n && board[level - l][i + l] == 'Q'){
-	                	flag = 1;
-	                	 break;
-	                  }
-	            }
-	            if( flag == -1){
-	                board[level][i] = 'Q';
-	                queen(res, board, level + 1, n);
-	                board[level][i] = '.';
-	            }
-	        }
-	    }	
+	
 	
 	
 	
