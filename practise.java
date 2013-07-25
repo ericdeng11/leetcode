@@ -24,73 +24,7 @@ public class practise {
 	//Test string, int, char 
 	public static void main(String[] args){
 	
-		int x = 1881;
-		System.out.println(isPalindrome(x));
-		Heap heap = new Heap(5);
-		heap.insert(0);
-		heap.insert(2);
-		heap.insert(8);
-		heap.insert(11);
-		heap.insert(12);
-		heap.insert(1);
-		heap.insert(10);
-		heap.insert(3);
-		heap.insert(4);
-		heap.insert(9);
-		heap.insert(7);
-		heap.insert(6);
-		heap.printData();
-		Map<Integer, Heap> rec = new HashMap<Integer, Heap>();
 		
-		int[] a = {0, 1, 3, 4, 5, 14, 10, 7, 6};
-		mergeSort(a, 0, a.length - 1);
-		for( int  i : a)
-		System.out.print(i + " ");
-		
-		Iterator iter = rec.entrySet().iterator(); 
-		while (iter.hasNext()) { 
-		    Map.Entry entry = (Map.Entry) iter.next(); 
-		    int key = (Integer) entry.getKey(); 
-		    Heap val = (Heap) entry.getValue(); 
-		} 
-		
-		int[] test = {1, 1, -1, -1, 3};
-		System.out.println(threeSumClosest(test,-1));
-		
-		ArrayList<String> res = new ArrayList<String>();
-		ArrayList<Character> c = new ArrayList<Character>();
-		c.add('c');
-		c.add('e');
-		res = getString(c, 1);
-		for( String s : res) System.out.println(s);
-		
-		LNode l1 = new LNode(3);
-		LNode l2 = new LNode(4);
-		LNode l3 = new LNode(5);
-		LNode l4 = new LNode(6);
-		LNode l5 = new LNode(7);
-		LNode l6 = new LNode(8);
-		LNode l7 = new LNode(9);
-		LNode l8 = new LNode(10);
-		
-		l1.next = l2;
-		l2.next = l3;
-		l3.next = l4;
-		l4.next = l5;
-		l5.next = l6;
-		l6.next = l7;
-		l7.next = l8;
-		LNode l = l1;
-		while( l!= null ){
-		System.out.print( l.val + " ");
-		l = l.next;
-		}
-		System.out.println();
-		l = switchNode(l1);
-		while( l!= null ){
-			System.out.print( l.val + " ");
-			l = l.next;
-			}
 	}
 	
 	
