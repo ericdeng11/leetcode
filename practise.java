@@ -26,6 +26,36 @@ public class practise {
 	
 		
 	}
+	
+	//Solve number permutations
+	//Only distinc numbers
+public ArrayList<ArrayList<Integer>> permute(int[] num) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+        int n = num.length;
+        ArrayList<Integer> permutation = new ArrayList<Integer>();
+        perm(num, n, res, permutation);
+        return res;
+    }
+    
+    
+public static void perm(int[] num, int n , ArrayList<ArrayList<Integer>> res, ArrayList<Integer> permutation){
+        if( permutation.size() == n ){
+            ArrayList<Integer> r = new ArrayList<Integer>();
+            for( int i : permutation ) r.add(num[i]);
+            res.add(r);
+            return;
+        }
+        for( int i = 0; i < n; i++){
+            if( permutation.contains(i) ) continue;
+            else {
+                permutation.add(i);
+                perm(num, n, res, permutation);
+                permutation.remove(permutation.size() - 1);
+            }
+        }
+    }
 
 //Only return the number of solutions of N Queen Problem
 public int totalNQueens(int n) {
