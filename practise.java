@@ -26,6 +26,36 @@ public class practise {
 	
 		
 	}
+
+//Only return the number of solutions of N Queen Problem
+public int totalNQueens(int n) {
+      	    if( n < 1 || ( n > 1  && n < 4 ) ) return 0;
+            int[] chess = new int[n];
+	        int count = queen(chess, 0, n , 0);
+	        return count;
+	    }
+//Use only one array to solve the problem
+public static int queen(int[] chess, int level, int n ,int count){
+	        if( level == n ) 
+                return ++count;
+            for( int i = 0 ; i < n; i++){
+                int flag = 1;
+                for( int j = 1; j <= level; j++){
+                    if( chess[level - j] == i || j == Math.abs( chess[level - j] - i)) {
+                        flag = 0;
+                        break;
+                    }               
+                }
+                if( flag == 1 ){
+                    chess[level] = i;
+                    count = queen(chess, level + 1, n, count);
+                }
+                            
+            }
+            return count;
+            
+	    }
+
 	
 	
 	public static LNode switchNode( LNode head ){
