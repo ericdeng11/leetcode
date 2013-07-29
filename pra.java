@@ -25,8 +25,6 @@ public class pra {
 	//The solution for partition palindrome list
 	//Using Dynamic programming and backtracing technic
 	public ArrayList<ArrayList<String>> partition(String s) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
      	 	  ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
       		  ArrayList<String> cur = new ArrayList<String>();
         	int[][] rec = new int[s.length()][s.length()];
