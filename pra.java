@@ -18,9 +18,15 @@ public class pra {
 	//cracking the code interview
 	//some are just basic algs
 
-        public static void helloWorld(){
-		System.out.println("Hello World!");
-	}
+        public static void main(String[] args) throws IOException{
+		//System.out.println(excelSheet(4238923));
+		//int[] a = {5};
+		//System.out.println(findRotate(5, a, 0, a.length - 1));
+		String[] strs ={"aacwef","aawef"};
+		System.out.println(longestCommonPrefix(strs));
+
+		}
+
 	
 	//The solution for partition palindrome list
 	//Using Dynamic programming and backtracing technic
@@ -2115,59 +2121,8 @@ public static LinkedList recursiveReverse(ListNode n, LinkedList l){
 	            }
 	        }
 	    }	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) throws IOException{
-		//System.out.println(excelSheet(4238923));
-		//int[] a = {5};
-		//System.out.println(findRotate(5, a, 0, a.length - 1));
-		String[] strs ={"aacwef","aawef"};
-		System.out.println(longestCommonPrefix(strs));
-		
-		}
-	
-	
-	
-	
-	
-	
 }
 
-
-/*
-ArrayList<ArrayList<int[]>> r = uniquePath(testa, 0, 0, 6, 4);
-System.out.println(r.size());
-for(ArrayList<int[]> ai : r){
-	for(int[] aii : ai){
-		System.out.print("(" + aii[0] + "," + aii[1] + ")");
-	}
-	System.out.println();
-}*/
-
-//bt.inorderPrint();
-		/*
-		seriBiTree(bt);
-		BinaryT b = deseriBiTree(new String("/Users/Eric/Documents/workspace/practise/serilizationBinaryTree.txt"));
-		dfsWrapper(b);
-		
-		*/
-		//b.printNode();
-		//System.out.println(biTree(t.root, Integer.MAX_VALUE, Integer.MIN_VALUE));
-		//dfsWrapper(t);
-		//zigzacTree(t);
-		/* try {
-			saveToFile(t);
-			binaryTree bt = getTreeBack(new String("/Users/Eric/Documents/workspace/practise/binaryTree.txt"));
-			bt.print();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
-		//prettyPrint(t);
 
 
 
