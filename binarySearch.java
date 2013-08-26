@@ -14,7 +14,8 @@ public static void main(String[] args){
   l.add(1);
   l.add(2);
   System.out.println(l.get(0));
-
+  System.out.println(iterativeBs(2323,arr));
+  System.out.println(iterativeBs(1,arr));
 
 }
 
@@ -29,7 +30,7 @@ public static int bs(int key, int[] arr, int left, int right){
 public static int iterativeBs(int key, int[] arr){
      int left = 0;
      int right = arr.length - 1; 
-     while( left < right )   
+     while( left <= right )   
      {
         int mid = (left + right) / 2;
         if(arr[mid] == key ) return mid;
