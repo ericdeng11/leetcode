@@ -14,6 +14,8 @@ public static void main(String[] args){
   l.add(1);
   l.add(2);
   System.out.println(l.get(0));
+
+
 }
 
 public static int bs(int key, int[] arr, int left, int right){
@@ -23,6 +25,11 @@ public static int bs(int key, int[] arr, int left, int right){
   else if ( arr[mid] < key ) return bs(key, arr, left + 1, right);
   else return bs(key, arr, left, mid -1);
 }
+
+public static int iterativeBs(int key, int[] arr, int left, int right){
+   
+}
+
 
 }
 
