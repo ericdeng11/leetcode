@@ -26,8 +26,19 @@ public static int bs(int key, int[] arr, int left, int right){
   else return bs(key, arr, left, mid -1);
 }
 
-public static int iterativeBs(int key, int[] arr, int left, int right){
-   
+public static int iterativeBs(int key, int[] arr){
+     int left = 0;
+     int right = arr.length - 1; 
+     while( left < right )   
+     {
+        int mid = (left + right) / 2;
+        if(arr[mid] == key ) return mid;
+        else if(arr[mid] < key ) {
+          left = mid + 1;   
+        }
+        else right = mid  - 1;
+     } 
+     return -1;
 }
 
 
