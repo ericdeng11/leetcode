@@ -27,6 +27,51 @@ public class pra {
 
 		}
 
+	//leet code Word Search
+	static public boolean exist(char[][] board, String word) {
+        	if(word.length()==0) return true;
+        	if(board.length==0||board[0].length==0) return false;
+        	boolean[][] check = new boolean[board.length][board[0].length];
+        	//Arrays.fill(check, false);
+        	for(int i = 0; i < board.length; i++){
+        	 for(int j =0; j < board[0].length; j++){
+        	    if(board[i][j]==word.charAt(0)){
+        	    check[i][j]=true;
+        	    if(checkBoard(board,word,check,1,i,j))
+        	        return true;
+        	     }
+        		     check[i][j] = false;
+        	 }
+	  }
+	 return false;
+	 }
+    
+    
+    	static boolean checkBoard(char[][] board, String word, boolean[][] check, int cur, int row, int col){
+        if(cur==word.length()) return true;
+        char c = word.charAt(cur);
+        if(row>0&&check[row-1][col] == false && board[row-1][col] == c){
+            check[row-1][col] = true;
+            if(checkBoard(board,word,check,cur+1,row-1,col)) return true;
+            check[row-1][col] = false;
+        }
+        if(col>0&&check[row][col-1] == false && board[row][col-1] == c){
+            check[row][col-1] = true;
+            if(checkBoard(board,word,check,cur+1,row,col-1)) return true;
+            check[row][col-1] = false;
+        }
+        if(row<board.length-1&&check[row+1][col] == false && board[row+1][col] == c){
+            check[row+1][col] = true;
+            if(checkBoard(board,word,check,cur+1,row+1,col)) return true;
+            check[row+1][col] = false;
+        }
+        if(col<board[0].length-1&&check[row][col+1] == false && board[row][col+1] == c){
+            check[row][col+1] = true;
+            if(checkBoard(board,word,check,cur+1,row,col+1)) return true;
+            check[row][col+1] = false;
+        }
+        return false;
+    }
 	
 	//The solution for partition palindrome list
 	//Using Dynamic programming and backtracing technic
